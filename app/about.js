@@ -859,6 +859,9 @@ legoskid, 5 Jun 2026:
 legoskid, 7 Jun 2026
 -Made the save button no longer set variables to fix player error
 
+legoskid, 17 Sep 2026:
+-Made the Cast button slightly more accurate
+
     </div>
     </div>
     </div>
