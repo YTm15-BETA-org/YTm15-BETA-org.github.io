@@ -186,7 +186,7 @@ function settingsPage() {
     pageCont.appendChild(page);
     page.appendChild(ytm15settings);
 
-    title.textContent = Settings_text_string + ' - 2015YouTube';
+    title.textContent = Settings_text_string + ' - 2015YouTube BETA';
 
     function settingsEventListenFunc(){
     const settingsOpts = settingsOptCont.querySelectorAll(".settings-category");
@@ -203,7 +203,7 @@ function settingsPage() {
     settingsPageHeader.id = "settings";
     headerTitle.setAttribute("aria-label", Settings_text_string);
     headerTitle.textContent = Settings_text_string;
-    title.textContent = Settings_text_string + ' - 2015YouTube';
+    title.textContent = Settings_text_string + ' - 2015YouTube BETA';
     if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] !== undefined && window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] !== "") {
       ytm15settings.classList.add("page-visible");
       if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "general") {
@@ -219,7 +219,7 @@ function settingsPage() {
       settingsPageHeader.id = "general";
       headerTitle.setAttribute("aria-label", General_text_string);
       headerTitle.textContent = General_text_string;
-      title.textContent = General_text_string + ' - 2015YouTube';
+      title.textContent = General_text_string + ' - 2015YouTube BETA';
 
       if (WEB_ENABLE_DARK_THEME_OPTION_expflag == "true") {
       settingBooleanDark = {
@@ -278,9 +278,8 @@ function settingsPage() {
       settingsPageHeader.id = "feedback";
       headerTitle.setAttribute("aria-label", Feedback_text_string);
       headerTitle.textContent = Feedback_text_string;
-      title.textContent = Feedback_text_string + ' - 2015YouTube';
-
-      settingsPage.innerHTML=`<p>Open an issue on the YTm15 GitHub (Recommended), or, you can check for pull requests open and observe/ask</p><p>r/oldyoutubelayout also exists.. although prepare yourself because there's NO MODERATION AT ALL</p><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"><img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/ytm15/ytm15.github.io?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fytm15%2Fytm15.github.io%2Fissues"></a><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"></a>`;
+      title.textContent = Feedback_text_string + ' - 2015YouTube BETA';
+      settingsPage.innerHTML=`<p>Open an issue on the YTm15 GitHub (Recommended), or, you can check for pull requests open and observe/ask (If any of the features you want may be being added, and haven't been merged into YTm15 BETA yet)</p><p>r/oldyoutubelayout also exists.. although prepare yourself because there's NO MODERATION AT ALL</p><p> If you have any issues with YTm15 BETA, post them on the YTm15 BETA GitHub Issues page, or YTm15 Pull Request #60 if they relate to the pull request's code.</p><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"><img alt="YTm15 (vanilla) GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/ytm15/ytm15.github.io?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fytm15%2Fytm15.github.io%2Fissues"></a><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"><img alt="YTm15 (vanilla) GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues-pr/ytm15/ytm15.github.io?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fytm15%2Fytm15.github.io%2Fpulls"></a><a href="https://www.reddit.com/r/oldyoutubelayout"><img alt="Static Badge" src="https://img.shields.io/badge/r%2Foldyoutubelayout-FF4500?style=for-the-badge&link=https%3A%2F%2Fwww.reddit.com%2Fr%2Foldyoutubelayout"></a>`;
       }
       if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "install") {
       /* innerSettingsPageCont.innerHTML = `
@@ -302,7 +301,7 @@ function settingsPage() {
       settingsPageHeader.id = "install";
       headerTitle.setAttribute("aria-label", InstallYtm15_text_string);
       headerTitle.textContent = InstallYtm15_text_string;
-      title.textContent = InstallYtm15_text_string + ' - 2015YouTube';
+      title.textContent = InstallYtm15_text_string + ' - 2015YouTube BETA';
 
       settingsPage.innerHTML=`<table style="border-top: 1px solid;border-bottom: 1px solid;margin-bottom:1rem;"><tr style="font-size:18px;"><td><img src="icon.png" width=60 style="padding-right: 5px;"></td><td>2015YouTube<br><span style="font-size:16px;">ytm15.github.io</span></td><td class="has-ripple" style="text-align:right;width: 100%;padding-right:3rem"><span style="border:1.2px solid rgba(0, 0, 0, 0.15);padding:3px;font-weight:bold;text-transform:uppercase;background:#f3f3f3;">Get as a Webapp</td></tr></table>Modern devices:<ol style="font-size: 15px;"><li>Open Safari (iOS)/Chrome (Android)</li><li>Go to <b>https://ytm15.github.io/app</b></li><li>Press "share"/the three dots</li><li>Press "Add to Home Screen"</li></ol>YTm15 is not supported on ≤iOS 9. For Android, you may need to get a updated browser APK if your native browser doesn't work. Hopefully, that will change too. Alternatively, there are websites online that can let you turn a website into an APK, but make sure it is using an updated browser engine if it isn't supported normally/natively.`;
       }
@@ -785,7 +784,7 @@ function settingsPage() {
       {
         "type": "boolean",
         "title": "HEADER_CAST_BUTTON_AS_URL_BOX",
-        "subtitle": "Copy a youtube link and press cast to open it in YTm15",
+        "subtitle": "Copy a youtube link and press cast to open it in YTm15 BETA",
         "pressed": HEADER_CAST_BUTTON_AS_URL_BOX_expflag == "true",
         "pressed-default": true,
         "disabled": false,

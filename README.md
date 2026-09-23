@@ -1,3 +1,6 @@
+# What's this? YTm15-*BETA*???
+It's just legoskid's pull requests + a mirror of vanilla YTm15 hosted on GitHub pages. Visit us at https://ytm15-beta-org.github.io . We were originally https://ytm15-beta.github.io , but that is dead because I made the mistake of making YTM15-beta an account rather than an organization, which caused the account to get flagged. This repo fixes this issue. If GitHub deletes the flagged account, I will ~~rename the organization so the URL can be moved back to the original.~~ redirect the original URL here to avoid confusion (this site has been around longer than the OG so I'm not restoring that URL)
+
 # YouTube Mobile 2015/YTm15
 A frontend/web-client for YouTube mobile based off the 2015 YT app for Android
 

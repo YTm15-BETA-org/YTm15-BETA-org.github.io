@@ -456,7 +456,7 @@ Subscribe_text_string = "Subscribe"
 Home_text_string = "Home"
 Popular_text_string = "Popular"
 Trending_text_string = "Trending"
-_2015YT_text_string = "2015YouTube"
+_2015YT_text_string = "2015YouTube BETA"
 SearchYT_text_string = "Search YouTube"
 /* Channel_Home_WIP_text_string = "Channel pages' home pages are currently being worked on. Please check back later" */
 Channel_Home_WIP_text_string = "Channel pages' home pages haven't been built yet. Please check back later";
@@ -482,9 +482,9 @@ General_text_string = "General";
 SettingsMSG_text_string = "There is no page open at the current moment";
 ExpFlags_text_string = "YTm15 Experimental Flags";
 Feedback_text_string = "Send feedback";
-InstallYtm15_text_string = "Install YTm15";
+InstallYtm15_text_string = "Install YTm15 BETA";
 SettingsMSG2_text_string = "To be added in the near future";
-AboutYTm15_text_string = "About YTm15";
+AboutYTm15_text_string = "About YTm15 BETA";
 DarkTheme_text_string = "Dark theme";
 DarkThemeDesc_text_string = "Enable dark theme throughout the app";
 About_text_string = "About";
@@ -2674,7 +2674,7 @@ if (window.location.hash.split("/").join(',').split("?").join(',').split(',').sl
     }
 if (!wasPrevChannelPage) {
     pageCont.innerHTML = "";
-    title.textContent = "2015YouTube";
+    title.textContent = "2015YouTube BETA";
     headerTitle.setAttribute("aria-label", _2015YT_text_string);
     headerTitle.textContent = _2015YT_text_string;
 }
@@ -2746,12 +2746,12 @@ function showNotification(message, buttonText=undefined, onclick=undefined) {
   return n;
 }
 
-if (window.location.pathname.split("/").slice(2, 3) == "2015YouTube%20(Mobile)") {
+if (window.location.pathname.split("/").slice(2, 3) == "2015YouTube%20BETA%20(Mobile)") {
 if (window.location.pathname.split("/").slice(3, 4) == "index.html" || window.location.pathname.split("/").slice(3, 4) == undefined || window.location.pathname.split("/").slice(3, 4) == "") { 
 hashDetector();
 }
 }
-if (window.location.pathname.split("/").slice(2, 3) !== "2015YouTube%20(Mobile)") {
+if (window.location.pathname.split("/").slice(2, 3) !== "2015YouTube%20BETA%20(Mobile)") {
 if (window.location.pathname.split("/").slice(2, 3) == "index.html" || window.location.pathname.split("/").slice(2, 3) == undefined || window.location.pathname.split("/").slice(2, 3) == "") { 
 hashDetector();
 }
@@ -2761,12 +2761,12 @@ settingsHashDetector();
 }
 
 window.addEventListener('hashchange', function (event) {
-    if (window.location.pathname.split("/").slice(2, 3) == "2015YouTube%20(Mobile)") {
+    if (window.location.pathname.split("/").slice(2, 3) == "2015YouTube%20BETA%20(Mobile)") {
     if (window.location.pathname.split("/").slice(3, 4) == "index.html" || window.location.pathname.split("/").slice(3, 4) == undefined || window.location.pathname.split("/").slice(3, 4) == "") { 
     hashDetector();
     }
     }
-    if (window.location.pathname.split("/").slice(2, 3) !== "2015YouTube%20(Mobile)") {
+    if (window.location.pathname.split("/").slice(2, 3) !== "2015YouTube%20BETA%20(Mobile)") {
     if (window.location.pathname.split("/").slice(2, 3) == "index.html" || window.location.pathname.split("/").slice(2, 3) == undefined || window.location.pathname.split("/").slice(2, 3) == "") { 
     hashDetector();
     }
