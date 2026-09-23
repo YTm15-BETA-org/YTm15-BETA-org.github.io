@@ -4259,8 +4259,8 @@ label.radio-label {
 }
 
 /* pivot bar lift flag */
-.lift-pivot ytm15-pivot-bar {
-    padding-bottom: 20px;
+.lift-pivot ytm15-pivot-bar, .lift-pivot .miniplayer .watchpage-frame-items {
+    padding-bottom: 22px;
 }
 
 /*Pivot shrink flag*/
