@@ -856,11 +856,17 @@ legoskid, 5 Jun 2026:
 -Fixed profile images on saved videos
 -Fixed variable typos
 
-legoskid, 7 Jun 2026
+legoskid, 7 Jun 2026:
 -Made the save button no longer set variables to fix player error
 
 legoskid, 17 Sep 2026:
 -Made the Cast button slightly more accurate
+
+legoskid, 19 Sep 2026:
+-Changed the wording of the "Send feedback" tab to discourage use of r/oldyoutubelayout
+
+legoskid, 22 Sep 2026:
+-Made the lifted pivot bar more accurate
 
     </div>
     </div>
