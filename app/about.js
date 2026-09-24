@@ -868,6 +868,9 @@ legoskid, 19 Sep 2026:
 legoskid, 22 Sep 2026:
 -Made the lifted pivot bar more accurate
 
+legoskid, 24 Sep 2026:
+-Added a temporary (bad) fix for channel pages
+
     </div>
     </div>
     </div>
