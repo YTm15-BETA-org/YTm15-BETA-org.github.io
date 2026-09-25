@@ -272,7 +272,7 @@ function settingsPage() {
       settingsPage.style.khtmlUserSelect = "unset";
       settingsPage.style.webkitUserSelect = "unset";
       settingsPage.style.webkitTouchCallout = "unset";
-      settingsPage.style.letterSpacing = "1px";
+      settingsPage.style.fontSize = "1.6rem";
       innerSettingsPageCont.appendChild(settingsPage);
       settingsPageHeader.innerHTML = Feedback_text_string;
       settingsPageHeader.id = "feedback";
@@ -280,7 +280,7 @@ function settingsPage() {
       headerTitle.textContent = Feedback_text_string;
       title.textContent = Feedback_text_string + ' - 2015YouTube';
 
-      settingsPage.innerHTML=`<p>Open an issue on the YTm15 GitHub (Recommended), or, you can check for pull requests open and observe/ask</p><p>r/oldyoutubelayout also exists.. although prepare yourself because there's NO MODERATION AT ALL</p><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"><img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/ytm15/ytm15.github.io?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fytm15%2Fytm15.github.io%2Fissues"></a><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"></a>`;
+      settingsPage.innerHTML=`<p>Open an issue on the YTm15 GitHub (Recommended), or, you can check for pull requests open and observe/ask</p><p>r/oldyoutubelayout also exists, but prepare yourself because there's NO MODERATION AT ALL</p><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"><img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/ytm15/ytm15.github.io?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fytm15%2Fytm15.github.io%2Fissues"></a><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"></a>`;
       }
       if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "install") {
       /* innerSettingsPageCont.innerHTML = `
@@ -296,15 +296,15 @@ function settingsPage() {
       settingsPage.style.khtmlUserSelect = "unset";
       settingsPage.style.webkitUserSelect = "unset";
       settingsPage.style.webkitTouchCallout = "unset";
-      settingsPage.style.letterSpacing = "1px";
+      settingsPage.style.fontSize = "1.6rem";
       innerSettingsPageCont.appendChild(settingsPage);
       settingsPageHeader.innerHTML = InstallYtm15_text_string;
-      settingsPageHeader.id = "install";
+      settingsPageHeader.id = "install"; // the point of this is just to show people btw not add any functionality
       headerTitle.setAttribute("aria-label", InstallYtm15_text_string);
       headerTitle.textContent = InstallYtm15_text_string;
       title.textContent = InstallYtm15_text_string + ' - 2015YouTube';
 
-      settingsPage.innerHTML=`<table style="border-top: 1px solid;border-bottom: 1px solid;margin-bottom:1rem;"><tr style="font-size:18px;"><td><img src="icon.png" width=60 style="padding-right: 5px;"></td><td>2015YouTube<br><span style="font-size:16px;">ytm15.github.io</span></td><td class="has-ripple" style="text-align:right;width: 100%;padding-right:3rem"><span style="border:1.2px solid rgba(0, 0, 0, 0.15);padding:3px;font-weight:bold;text-transform:uppercase;background:#f3f3f3;">Get as a Webapp</td></tr></table>Modern devices:<ol style="font-size: 15px;"><li>Open Safari (iOS)/Chrome (Android)</li><li>Go to <b>https://ytm15.github.io/app</b></li><li>Press "share"/the three dots</li><li>Press "Add to Home Screen"</li></ol>YTm15 is not supported on ≤iOS 9. For Android, you may need to get a updated browser APK if your native browser doesn't work. Hopefully, that will change too. Alternatively, there are websites online that can let you turn a website into an APK, but make sure it is using an updated browser engine if it isn't supported normally/natively.`;
+      settingsPage.innerHTML=`<p>Did you know you can add websites to your homescreen? You can do this with YTm15 so it is an "app"<table style="border-top: 1px solid transparent;border-bottom: 1px solid transparent;margin-bottom:1rem;"><tr style="font-size:18px;"><td><img src="icon.png" width=60 style="padding-right: 5px;"></td><td>2015YouTube<br><span style="font-size:11px;">★★★★★(126)　ytm15.github.io</span></td><td class="has-ripple" style="text-align:right;width: 100%;padding-right:3rem"><span style="border:1px solid #26A92B;border-radius:5px;color:#26A92B;padding:3px;text-transform:uppercase;">Install Webapp</td></tr></table>Modern devices:<ol style="font-size: 15px;"><li>Open Safari (iOS)/Chrome (Android)</li><li>Go to <b>https://ytm15.github.io/app</b></li><li>Press "share"/the three dots</li><li>Press "Add to Home Screen"</li></ol><p>YTm15 does not support iOS 9 or earlier (for now)!</p><p>Android 7 or earlier, update your browser</p><p>You can also use an online service to convert the website into an APK, but make sure it uses an up-to-date browser engine if your browser does not support the site.</p>`;
       }
       if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "expflags") {
       /* innerSettingsPageCont.innerHTML = `
@@ -722,9 +722,9 @@ function settingsPage() {
       {
         "type": "text",
         "title": "APP_CUSTOM_INVIDIOUS_URL",
-        "subtitle": "This loads your home page and comments. <small>which should update and not be static</small><br>If you are hosting an invidious instance put it here<br>You should change CORS policy if you own your instance, otherwise use a CORS redirector. <small>If you can use a CORS disabler extension, you can also remove the starting proxy url, it will make it faster.</small><br>Clear the text box to reset the url<br><small>If you want to setup an invidious instance just for YTm15, it is not worth it, it is complicated to setup and will take all of your computer's resources.</small>",
+        "subtitle": "This loads your home page and comments, which should update and not be static<br>If you are hosting (or know a better) an invidious instance put it here<br>You should change CORS policy if you own your instance, otherwise use a CORS redirector or disabler extension (faster, no need for proxy)</small><br><small>If you want to setup an invidious instance just for YTm15, it is not worth it, it is complicated to setup and will take all of your computer's resources.</small>",
         "value": "https://api.codetabs.com/v1/proxy?quest=https://y.com.sb/",
-        "placeholder": "",
+        "placeholder": "Leave this cleared to reset the url",
         "disabled": false,
         "lsitem": "APP_CUSTOM_INVIDIOUS_URL"
       },
