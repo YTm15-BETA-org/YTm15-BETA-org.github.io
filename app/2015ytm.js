@@ -458,6 +458,16 @@ Popular_text_string = "Popular"
 Trending_text_string = "Trending"
 _2015YT_text_string = "2015YouTube"
 SearchYT_text_string = "Search YouTube"
+YouTube_Header_text_string = null;
+if (HEADER_ALWAYS_SHOW_YOUTUBE_TITLE_expflag == "YouTube") {
+  YouTube_Header_text_string = "YouTube";
+  if (HEADER_YOUTUBE_BRANDING_expflag == "Red") {
+    YouTube_Header_text_string = "YouTube Red";
+  }
+  if (HEADER_YOUTUBE_BRANDING_expflag == "Premium") {
+    YouTube_Header_text_string = "YouTube Premium";
+  }
+}
 /* Channel_Home_WIP_text_string = "Channel pages' home pages are currently being worked on. Please check back later" */
 Channel_Home_WIP_text_string = "Channel pages' home pages haven't been built yet. Please check back later";
 /* No_Search_Results_text_string = "No results found. Try searching for something else or removing filters"; */

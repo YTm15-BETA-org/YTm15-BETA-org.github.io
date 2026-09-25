@@ -33,7 +33,10 @@ spinner();
 function renderData() {
     const headerTitle = document.querySelector(".header-title");
     headerTitle.setAttribute("aria-label", "");
-    (HEADER_ALWAYS_SHOW_YOUTUBE_TITLE_expflag == "true") ? headerTitle.textContent = "YouTube" : headerTitle.textContent = "";
+    headerTitle.textContent = "";
+    if (YouTube_Header_text_string) {
+        headerTitle.textContent = YouTube_Header_text_string;
+    }
 
     const headerBar = document.querySelector("ytm15-header-bar");
    
@@ -208,7 +211,10 @@ function renderData() {
         } */
 
         headerTitle.setAttribute("aria-label", Trending_text_string);
-        headerTitle.textContent = HEADER_ALWAYS_SHOW_YOUTUBE_TITLE_expflag == "true" ? "YouTube" : Trending_text_string;
+        headerTitle.textContent = Trending_text_string;
+        if (YouTube_Header_text_string) {
+            headerTitle.textContent = YouTube_Header_text_string;
+        }
 
         if (WEB_ENABLE_PIVOT_BAR_expflag !== "true") {
         if (!document.querySelector(".tab-bar")) {
@@ -300,7 +306,10 @@ function renderData() {
             }
 
             headerTitle.setAttribute("aria-label", Library_text_string);
-            headerTitle.textContent = HEADER_ALWAYS_SHOW_YOUTUBE_TITLE_expflag == "true" ? "YouTube" : Library_text_string;
+            headerTitle.textContent = Library_text_string;
+            if (YouTube_Header_text_string) {
+                headerTitle.textContent = YouTube_Header_text_string;
+            }
 
             const page = document.createElement("page");
             page.classList.add('home');
@@ -445,7 +454,10 @@ function renderData() {
         } */
 
         headerTitle.setAttribute("aria-label", Popular_text_string);
-        headerTitle.textContent = HEADER_ALWAYS_SHOW_YOUTUBE_TITLE_expflag == "true" ? "YouTube" : Popular_text_string;
+        headerTitle.textContent = Popular_text_string;
+        if (YouTube_Header_text_string) {
+            headerTitle.textContent = YouTube_Header_text_string;
+        }
 
         const page = document.createElement("page");
         page.classList.add('home');
@@ -584,7 +596,10 @@ function renderData() {
     } */
 
     headerTitle.setAttribute("aria-label", Home_text_string);
-    headerTitle.textContent = HEADER_ALWAYS_SHOW_YOUTUBE_TITLE_expflag == "true" ? "YouTube" : Home_text_string;
+    headerTitle.textContent = Home_text_string;
+    if (YouTube_Header_text_string) {
+        headerTitle.textContent = YouTube_Header_text_string;
+    }
 
     if (WEB_ENABLE_PIVOT_BAR_expflag !== "true") {
     if (!document.querySelector(".tab-bar")) {
