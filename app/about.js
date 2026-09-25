@@ -870,7 +870,15 @@ legoskid, 22 Sep 2026:
 
 legoskid, 24 Sep 2026:
 -Added a temporary (bad) fix for channel pages
+-Replaced the temporary fix with the proper fix that Yacine-Book previously implemented
 
+legoskid, 25 Sep 2026:
+-Improved expflag HEADER_ALWAYS_SHOW_YOUTUBE_TITLE to adjust based on the selected YouTube title (ex: YouTube Red and Premium) and made it more optimized
+-Re-worded the "Send feedback" text again
+-Re-ordered the settings tabs
+
+Entinty1999, 25 Sep 2026:
+-Reset the "Send feedback" tab to the default (legoskid's) string (this is to avoid another merge conflict if legoskid changes it again, and also because I'm too lazy to change it again)
     </div>
     </div>
     </div>
