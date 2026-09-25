@@ -135,15 +135,15 @@ function settingsPage() {
     },
     {
       "type": "option",
-      "title": Feedback_text_string,
-      "link": "#/feedback",
-      "id": "feedback"
-    },
-    {
-      "type": "option",
       "title": InstallYtm15_text_string,
       "link": "#/install",
       "id": "install"
+    },
+    {
+      "type": "option",
+      "title": Feedback_text_string,
+      "link": "#/feedback",
+      "id": "feedback"
     }
     ];
 
