@@ -129,15 +129,15 @@ function settingsPage() {
     },
     {
       "type": "option",
-      "title": AboutYTm15_text_string,
-      "link": "index.html#/about",
-      "id": "about"
-    },
-    {
-      "type": "option",
       "title": InstallYtm15_text_string,
       "link": "#/install",
       "id": "install"
+    },
+    {
+      "type": "option",
+      "title": AboutYTm15_text_string,
+      "link": "index.html#/about",
+      "id": "about"
     },
     {
       "type": "option",
