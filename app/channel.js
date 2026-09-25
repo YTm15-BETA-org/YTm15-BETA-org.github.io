@@ -2050,7 +2050,7 @@ function channelVideosContin(continuation, contItemParent) {
     page.appendChild(tabContainer);
 
     var title = document.querySelector("title");
-    title.textContent = response.meta.title  + ' - 2015YouTube';
+    title.textContent = response.meta.title  + ' - 2015YouTube BETA';
 
     if (!document.querySelector(".tab-bar")) {
         headerBar.appendChild(tabBar);
