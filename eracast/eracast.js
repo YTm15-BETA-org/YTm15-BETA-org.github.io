@@ -1,6 +1,6 @@
 (async function initEraCastParser() {
   console.log("Start");
-  window.fetchEraCastFeed = async function fetchEraCastFeed(url = 'https://www.eracast.cc/') {
+  window.fetchEraCastFeed = async function fetchEraCastFeed(url = ERACAST_PROXY_MODE_option + 'https://www.eracast.cc/') {
     try {
       const res = await fetch(url, { method: 'GET', mode: 'cors' });
       console.log("Start");
@@ -115,41 +115,76 @@
   };
 
   // @param {string} videoId
-  // @returns {Promise<{thumbnail:string,title:string,formats:{url:string}[]}|{}>}
-  window.fetchEraCast1080WebmUrl = async function fetchEraCast1080WebmUrl(videoId) {
+  // @returns {Promise<{thumbnail:{url:string}[],title:string,formats:{url:string,mimeType:string,qualityLabel:string}[]}|{}>}
+  window.fetchEraCastVideoFormats = async function fetchEraCastVideoFormats(videoId) {
     try {
       if (!videoId || typeof videoId !== 'string') return {};
 
-      const watchUrl = `https://www.eracast.cc/watch?v=${encodeURIComponent(videoId)}`;
+      const watchUrl = ERACAST_PROXY_MODE_option + `https://www.eracast.cc/watch?v=${encodeURIComponent(videoId)}`;
       const res = await fetch(watchUrl, { method: 'GET', mode: 'cors' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const html = await res.text();
 
       const dom = new DOMParser().parseFromString(html, 'text/html');
-      const ogImage = dom.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
-      const ogTitle = dom.querySelector('meta[property="og:title"]')?.getAttribute('content') || '';
+      var ogImage = dom.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+      const prefixFindImage = /[^\/]+(?=\/?$)/;
+      ogImage = ogImage + ogImage.match(prefixFindImage) + "_1.jpg";
+      const ogTitle = dom.querySelector('meta[property="og:title"]')?.getAttribute('content') || '';console.log(ogImage);
 
-      // This regex gets 1080p video
-      const re = /targetDiv\.setAttribute\(\s*['"]src['"]\s*,\s*['"]([^'"]*?_1080\.)['"]\s*\+\s*ext\s*\)\s*;/;
-      const m = html.match(re);
-      if (!m || !m[1]) return {};
+      const prefixRe = /targetDiv\.setAttribute\(\s*['"]src['"]\s*,\s*['"]([^'"]*?)_(?:1080|720|480)\.['"]\s*\+\s*ext\s*\)/;
+      const prefixMatch = html.match(prefixRe);
+      if (!prefixMatch) return {};
+      const prefix = prefixMatch[1];
+      console.log("Prefix found:", prefix);
 
-      const prefix = m[1];
-      const videoUrl = new URL(prefix + 'mp4', watchUrl).href; // this is not the math function
+      const sourcesBlockMatch = html.match(/var\s+sources\s*=\s*\{([\s\S]*?)\}\s*;/);
+      const sourcesBlock = sourcesBlockMatch ? sourcesBlockMatch[1] : '';
+      const flag = (key) => {
+        const m = sourcesBlock.match(new RegExp(`${key}\\s*:\\s*(true|false)`));
+        return m ? m[1] === 'true' : false;
+      };
+      console.log("Sources block:", sourcesBlock);
+      const sources = {
+        1080: flag(1080),
+        720: flag(720),
+        480: flag(480),
+        360: flag(360),
+        webm: flag('webm'),
+        av1: flag('av1')
+      };
+      console.log("Sources parsed:", sources);
 
-      console.log({
-        thumbnail: ogImage,
-        title: ogTitle,
-        formats: [{ url: videoUrl }]
+      const getExt = (resolution) => {
+        if (!sources[resolution]) return null;
+        if (sources.av1 && resolution === 480) return 'webm';
+        if (sources.av1 && (resolution === 1080 || resolution === 720)) return 'mp4';
+        if (sources.webm && (resolution === 1080 || resolution === 720)) return 'webm';
+        return 'mp4';
+      };
+
+      const formats = [];
+      [360, 480, 720, 1080].forEach((quality) => {
+        const ext = getExt(quality);
+        if (!ext) return;
+        formats.push({
+          url: new URL(`${prefix}_${quality}.${ext}`, watchUrl).href,
+          mimeType: `video/${ext}`,
+          qualityLabel: `${quality}p`
+        });
       });
+
+      if (!formats.length) return {};
+
+      const thumbnail = ogImage ? [{ url: ogImage }, { url: ogImage }, { url: ogImage }, { url: ogImage }] : [];
+
       return {
-        thumbnail: ogImage,
+        thumbnail,
         title: ogTitle,
-        formats: [{ url: videoUrl }]
+        formats
       };
     } catch (err) {
-      console.error('fetchEraCast1080WebmUrl error:', err);
+      console.error('fetchEraCastVideoFormats error:', err);
       return {};
     }
   };
@@ -160,7 +195,7 @@
     try {
       if (!videoId || typeof videoId !== 'string') return {};
 
-      const watchUrl = `https://www.eracast.cc/watch?v=${encodeURIComponent(videoId)}`;
+      const watchUrl = ERACAST_PROXY_MODE_option + `https://www.eracast.cc/watch?v=${encodeURIComponent(videoId)}`;
       const res = await fetch(watchUrl, { method: 'GET', mode: 'cors' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
@@ -225,10 +260,47 @@
       const channelThumbnail = dom.querySelector('.yt-thumb-clip img')?.getAttribute('src') || '';
 
       const thumbnailList = (() => {
-        const ogImage = dom.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+        var ogImage = dom.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+        const prefixFindImage = /[^\/]+(?=\/?$)/;
+        ogImage = ogImage + ogImage.match(prefixFindImage) + "_1.jpg";
         if (!ogImage) return [];
         return [{ url: ogImage, width: 0, height: 0 }];
       })();
+
+      console.log({
+        id: videoId,
+        title,
+        lengthSeconds: String(lengthSeconds),
+        keywords: [],
+        channelTitle,
+        channelId,
+        description,
+        thumbnail: thumbnailList,
+        allowRatings: true,
+        viewCount: String(viewCountNumber),
+        isPrivate: false,
+        isUnpluggedCorpus: false,
+        isLiveContent: false,
+        isLive: false,
+        isCrawlable: true,
+        isFamilySafe: true,
+        availableCountries: [],
+        isUnlisted: false,
+        category: '',
+        publishDate: publishDateIso,
+        publishedAt: publishDateIso,
+        uploadDate: publishDateIso,
+        isShortsEligible: false,
+        likeCount: likeCountText.replace(/[^0-9]/g, '') || likeCountText,
+        dislikeCount: dislikeCountText.replace(/[^0-9]/g, '') || dislikeCountText,
+        hasCaption: false,
+        storyboards: [],
+        playableInEmbed: true,
+        channelThumbnail: [{url:channelThumbnail}],
+        subscriberCountText,
+        extraMeta: [],
+        relatedVideos: { continuation: '', data: [{videoId: videoId,title:"placeholder video btw",channelTitle:"",thumbnail:[{url:""},{url:""}],lengthText:"0:00"}] }
+      });
 
       return {
         id: videoId,
@@ -262,7 +334,7 @@
         channelThumbnail: [{url:channelThumbnail}],
         subscriberCountText,
         extraMeta: [],
-        relatedVideos: { continuation: '', data: [{videoId: videoId,title:"placeholder video btw",channelTitle:"YouTube Mobile 2015/legoskid",thumbnail:[{url:""},{url:""}],lengthText:"0:00"}] }
+        relatedVideos: { continuation: '', data: [{videoId: videoId,title:"placeholder video btw",channelTitle:"",thumbnail:[{url:""},{url:""}],lengthText:"0:00"}] }
       };
     } catch (err) {
       console.error('fetchEraCastVideoInfo error:', err);

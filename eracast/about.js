@@ -618,6 +618,19 @@ Entinty1999, 8 Feb 2026:
 -Added mirror of vanilla YTm15 (hosted at ytm15-beta-org.github.io/vanilla-mirror)
 --Added YTm15 BETA changelog to the mirror, but renamed it to "Mirror changelog"
 -Added colons after dates in changelog for consistency with Yacine's changelog
+
+legoskid, 21 Sep 2026:
+-Added custom useragent requirement notice to the EraCast Mode option
+-Fixed video playback and added working quality options
+
+legoskid, 22 Sep 2026:
+-Fixed thumbnail parsing so that the player now works with most videos
+
+legoskid, 23 Sep 2026:
+-Added EraCast Proxy Mode, meaning the custom useragent is no longer necessary
+
+legoskid, 24 Sep 2026:
+-Made the Cast button function properly (according to YTm15 logic) in EraCast Mode
     </div>
     </div>
     </div>
