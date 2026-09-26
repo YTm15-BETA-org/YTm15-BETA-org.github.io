@@ -310,7 +310,7 @@ function renderHeader() {
 
     const menuItemBtnAbt = document.createElement("button");
     menuItemBtnAbt.classList.add("menu-item-button", "has-ripple");
-    /* menuItemBtnAbt.textContent = "About YTm15"; */
+    /* menuItemBtnAbt.textContent = "About YTm15 BETA"; */
     menuItemBtnAbt.textContent = AboutYTm15_text_string;
     menuItemBtnAbt.onclick = function(){
         window.location.href = "#/about";

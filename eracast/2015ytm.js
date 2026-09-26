@@ -388,7 +388,7 @@ Subscribe_text_string = "Subscribe"
 Home_text_string = "Home"
 Popular_text_string = "Popular"
 Trending_text_string = "Trending"
-_2015YT_text_string = "2015YouTube"
+_2015YT_text_string = "2015YouTube BETA"
 SearchYT_text_string = "Search YouTube"
 /* Channel_Home_WIP_text_string = "Channel pages' home pages are currently being worked on. Please check back later" */
 Channel_Home_WIP_text_string = "Channel pages' home pages haven't been built yet. Please check back later";
@@ -408,7 +408,7 @@ General_text_string = "General";
 SettingsMSG_text_string = "There is no page open at the current moment";
 ExpFlags_text_string = "YTm15 Experimental Flags";
 SettingsMSG2_text_string = "To be added in the near future";
-AboutYTm15_text_string = "About YTm15";
+AboutYTm15_text_string = "About YTm15 BETA";
 DarkTheme_text_string = "Dark theme";
 DarkThemeDesc_text_string = "Enable dark theme throughout the app";
 EraCast_text_string = "EraCast mode";
@@ -2550,7 +2550,7 @@ if (window.location.hash.split("/").join(',').split("?").join(',').split(',').sl
     }
 if (!wasPrevChannelPage) {
     pageCont.innerHTML = "";
-    title.textContent = "2015YouTube";
+    title.textContent = "2015YouTube BETA";
     headerTitle.setAttribute("aria-label", _2015YT_text_string);
     headerTitle.textContent = _2015YT_text_string;
 }

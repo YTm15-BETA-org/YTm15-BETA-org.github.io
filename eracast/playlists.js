@@ -163,7 +163,7 @@ function playlistPage(){
     tabContent.appendChild(sectionList);
 
     var title = document.querySelector("title");
-    title.textContent = data.title + ' - 2015YouTube';
+    title.textContent = data.title + ' - 2015YouTube BETA';
     } else {
     getPlaylistData.onerror();
     }

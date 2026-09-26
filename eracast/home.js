@@ -257,7 +257,7 @@ function renderData() {
         var oldTitle = document.querySelector("title");
     
         var title = document.createElement("title");
-        title.textContent = Trending_text_string + ' - 2015YouTube';
+        title.textContent = Trending_text_string + ' - 2015YouTube BETA';
 
         oldTitle.parentNode.replaceChild(title, oldTitle);
 
@@ -367,7 +367,7 @@ function renderData() {
         var oldTitle = document.querySelector("title");
     
         var title = document.createElement("title");
-        title.textContent = Popular_text_string + ' - 2015YouTube';
+        title.textContent = Popular_text_string + ' - 2015YouTube BETA';
 
         oldTitle.parentNode.replaceChild(title, oldTitle);
 
@@ -542,7 +542,7 @@ function renderData() {
                 var oldTitle = document.querySelector("title");
                 
                 var title = document.createElement("title");
-                title.textContent = Home_text_string + ' - 2015YouTube';
+                title.textContent = Home_text_string + ' - 2015YouTube BETA';
 
                 oldTitle.parentNode.replaceChild(title, oldTitle);
 
@@ -742,7 +742,7 @@ function renderData() {
     var oldTitle = document.querySelector("title");
     
     var title = document.createElement("title");
-    title.textContent = Home_text_string + ' - 2015YouTube';
+    title.textContent = Home_text_string + ' - 2015YouTube BETA';
 
     oldTitle.parentNode.replaceChild(title, oldTitle);
 
