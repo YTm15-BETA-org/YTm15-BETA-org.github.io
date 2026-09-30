@@ -862,6 +862,27 @@ legoskid, 7 Jun 2026
 legoskid, 17 Sep 2026:
 -Made the Cast button slightly more accurate
 
+legoskid, 19 Sep 2026:
+-Changed the wording of the "Send feedback" page to discourage use of r/oldyoutubelayout
+
+legoskid, 22 Sep 2026:
+-Made the lifted pivot bar position more accurate
+
+legoskid, 24 Sep 2026:
+-Added a temporary fix for channels pages
+
+legoskid, 25 Sep 2026:
+-Attempted a better fix of channels pages from Yacine's code
+-Made the logo-less YouTube header (with HEADER_ALWAYS_SHOW_YOUTUBE_TITLE enabled so that it shows the title) adjust to Red/Premium if toggled in expflags
+-Re-worded the "Send feedback" tab once again
+-Re-ordered the order of the settings tabs
+
+legoskid, 28 Sep 2026:
+-Fixed channels pages (for real this time)
+
+legoskid, 30 Sep 2026:
+-Made the Subscriptions icon more accurate
+
     </div>
     </div>
     </div>
