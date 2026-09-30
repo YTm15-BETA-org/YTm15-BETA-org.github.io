@@ -458,6 +458,16 @@ Popular_text_string = "Popular"
 Trending_text_string = "Trending"
 _2015YT_text_string = "2015YouTube BETA"
 SearchYT_text_string = "Search YouTube"
+YouTube_Header_text_string = null;
+if (HEADER_ALWAYS_SHOW_YOUTUBE_TITLE_expflag == "YouTube") {
+  YouTube_Header_text_string = "YouTube";
+  if (HEADER_YOUTUBE_BRANDING_expflag == "Red") {
+    YouTube_Header_text_string = "YouTube Red";
+  }
+  if (HEADER_YOUTUBE_BRANDING_expflag == "Premium") {
+    YouTube_Header_text_string = "YouTube Premium";
+  }
+}
 /* Channel_Home_WIP_text_string = "Channel pages' home pages are currently being worked on. Please check back later" */
 Channel_Home_WIP_text_string = "Channel pages' home pages haven't been built yet. Please check back later";
 /* No_Search_Results_text_string = "No results found. Try searching for something else or removing filters"; */
@@ -1236,7 +1246,7 @@ function renderPivotBar(){
     {
       "name": Subs_text_string,
       "pivotName": "subscriptions",
-      "iconPath": "M20 8H4V6h16v2zm-2-6H6v2h12V2zm4 8v12H2V10h20zm-6 6-6-3.27v6.53L16 16z",
+      "iconPath": "M7.5 4.5h9V6h-9zm-1.5 3h12V9H6zM4.5 10.5h15v9h-15zm5.75 2.75v3.5l3.5-1.75z",
       "link": "subscriptions"
     },
     {
