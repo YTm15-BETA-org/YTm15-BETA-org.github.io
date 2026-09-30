@@ -186,7 +186,7 @@ function settingsPage() {
     pageCont.appendChild(page);
     page.appendChild(ytm15settings);
 
-    title.textContent = Settings_text_string + ' - 2015YouTube';
+    title.textContent = Settings_text_string + ' - 2015YouTube BETA';
 
     function settingsEventListenFunc(){
     const settingsOpts = settingsOptCont.querySelectorAll(".settings-category");
@@ -203,7 +203,7 @@ function settingsPage() {
     settingsPageHeader.id = "settings";
     headerTitle.setAttribute("aria-label", Settings_text_string);
     headerTitle.textContent = Settings_text_string;
-    title.textContent = Settings_text_string + ' - 2015YouTube';
+    title.textContent = Settings_text_string + ' - 2015YouTube BETA';
     if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] !== undefined && window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] !== "") {
       ytm15settings.classList.add("page-visible");
       if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "general") {
@@ -219,7 +219,7 @@ function settingsPage() {
       settingsPageHeader.id = "general";
       headerTitle.setAttribute("aria-label", General_text_string);
       headerTitle.textContent = General_text_string;
-      title.textContent = General_text_string + ' - 2015YouTube';
+      title.textContent = General_text_string + ' - 2015YouTube BETA';
 
       if (WEB_ENABLE_DARK_THEME_OPTION_expflag == "true") {
       settingBooleanDark = {
@@ -278,7 +278,7 @@ function settingsPage() {
       settingsPageHeader.id = "feedback";
       headerTitle.setAttribute("aria-label", Feedback_text_string);
       headerTitle.textContent = Feedback_text_string;
-      title.textContent = Feedback_text_string + ' - 2015YouTube';
+      title.textContent = Feedback_text_string + ' - 2015YouTube BETA';
 
       settingsPage.innerHTML=`<p>Open an issue on the YTm15 GitHub (Recommended), or, you can check for pull requests open and observe/ask</p><p>r/oldyoutubelayout also exists, but prepare yourself because there's NO MODERATION AT ALL</p><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"><img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/ytm15/ytm15.github.io?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fytm15%2Fytm15.github.io%2Fissues"></a><a style="padding-right:1rem;" href="https://github.com/ytm15/ytm15.github.io/issues"></a>`;
       }
@@ -302,7 +302,7 @@ function settingsPage() {
       settingsPageHeader.id = "install"; // the point of this is just to show people btw not add any functionality
       headerTitle.setAttribute("aria-label", InstallYtm15_text_string);
       headerTitle.textContent = InstallYtm15_text_string;
-      title.textContent = InstallYtm15_text_string + ' - 2015YouTube';
+      title.textContent = InstallYtm15_text_string + ' - 2015YouTube BETA';
 
       settingsPage.innerHTML=`<p>Did you know you can add websites to your homescreen? You can do this with YTm15 so it is an "app"<table style="border-top: 1px solid transparent;border-bottom: 1px solid transparent;margin-bottom:1rem;"><tr style="font-size:18px;"><td><img src="icon.png" width=60 style="padding-right: 5px;"></td><td>2015YouTube<br><span style="font-size:11px;">★★★★★(126)　ytm15.github.io</span></td><td class="has-ripple" style="text-align:right;width: 100%;padding-right:3rem"><span style="border:1px solid #26A92B;border-radius:5px;color:#26A92B;padding:3px;text-transform:uppercase;">Install Webapp</td></tr></table>Modern devices:<ol style="font-size: 15px;"><li>Open Safari (iOS)/Chrome (Android)</li><li>Go to <b>https://ytm15.github.io/app</b></li><li>Press "share"/the three dots</li><li>Press "Add to Home Screen"</li></ol><p>YTm15 does not support iOS 9 or earlier (for now)!</p><p>Android 7 or earlier, update your browser</p><p>You can also use an online service to convert the website into an APK, but make sure it uses an up-to-date browser engine if your browser does not support the site.</p>`;
       }
@@ -785,7 +785,7 @@ function settingsPage() {
       {
         "type": "boolean",
         "title": "HEADER_CAST_BUTTON_AS_URL_BOX",
-        "subtitle": "Copy a youtube link and press cast to open it in YTm15",
+        "subtitle": "Copy a youtube link and press cast to open it in YTm15 BETA",
         "pressed": HEADER_CAST_BUTTON_AS_URL_BOX_expflag == "true",
         "pressed-default": true,
         "disabled": false,
