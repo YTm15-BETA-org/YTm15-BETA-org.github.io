@@ -883,6 +883,9 @@ legoskid, 28 Sep 2026:
 legoskid, 30 Sep 2026:
 -Made the Subscriptions icon more accurate
 
+Yacine-Book, 1 Oct 2026:
+-Updated community posts for dark mode
+
     </div>
     </div>
     </div>
