@@ -886,6 +886,9 @@ legoskid, 30 Sep 2026:
 Yacine-Book, 1 Oct 2026:
 -Updated community posts for dark mode
 
+legoskid, 5 Oct 2026:
+-Changed the default Invidious instance from y.com.sb to invidious.i234.cyou.
+
     </div>
     </div>
     </div>
