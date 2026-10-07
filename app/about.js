@@ -889,6 +889,9 @@ Yacine-Book, 1 Oct 2026:
 legoskid, 5 Oct 2026:
 -Changed the default Invidious instance from y.com.sb to invidious.i234.cyou.
 
+Yacine-Book, 7 Oct 2026:
+-Made minor code adjustments
+
     </div>
     </div>
     </div>
