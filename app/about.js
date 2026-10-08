@@ -891,6 +891,9 @@ legoskid, 5 Oct 2026:
 
 Yacine-Book, 7 Oct 2026:
 -Made minor code adjustments
+-Merged cors2 into main YTm15
+
+- END OF BETA CHANGELOG -
 
     </div>
     </div>
