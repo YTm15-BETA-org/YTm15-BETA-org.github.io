@@ -169,6 +169,38 @@ if (APP_STOP_TEXT_SELECTION_expflag == undefined) {
   APP_STOP_TEXT_SELECTION_expflag = localStorage.getItem("APP_STOP_TEXT_SELECTION");
 }
 ERACAST_MODE_option = localStorage.getItem("ERACAST_MODE");
+WATCH_UI_NO_LINES_expflag = localStorage.getItem("WATCH_UI_NO_LINES");
+WATCH_COMMENT_SECTION_LEFT_expflag = localStorage.getItem("WATCH_COMMENT_SECTION_LEFT");
+WATCH_DOWNLOAD_BUTTON_expflag = localStorage.getItem("WATCH_DOWNLOAD_BUTTON");
+WATCH_SAVE_BUTTON_expflag = localStorage.getItem("WATCH_SAVE_BUTTON");
+WATCH_HIDE_SUBSCRIBE_ICON_expflag = localStorage.getItem("WATCH_HIDE_SUBSCRIBE_ICON");
+HEADER_YOUTUBE_BRANDING_expflag = localStorage.getItem("HEADER_YOUTUBE_BRANDING");
+if (HEADER_YOUTUBE_BRANDING_expflag == undefined) {
+  localStorage.setItem("HEADER_YOUTUBE_BRANDING", "YouTube");
+  HEADER_YOUTUBE_BRANDING_expflag = localStorage.getItem("HEADER_YOUTUBE_BRANDING");
+}
+WATCH_AUTOPLAY_SWITCH_expflag = localStorage.getItem("WATCH_AUTOPLAY_SWITCH");
+HEADER_USE_ACCOUNT_ICON_expflag = localStorage.getItem("HEADER_USE_ACCOUNT_ICON");
+HEADER_ACCOUNT_ICON_LINK_expflag = localStorage.getItem("HEADER_ACCOUNT_ICON_LINK");
+if (HEADER_ACCOUNT_ICON_LINK_expflag == undefined) {
+  localStorage.setItem("HEADER_ACCOUNT_ICON_LINK", "");
+  HEADER_ACCOUNT_ICON_LINK_expflag = localStorage.getItem("HEADER_ACCOUNT_ICON_LINK");
+}
+WATCH_SAVE_IS_ADD_TO_expflag = localStorage.getItem("WATCH_SAVE_IS_ADD_TO");
+PIVOT_TRENDING_IS_EXPLORE_expflag = localStorage.getItem("PIVOT_TRENDING_IS_EXPLORE");
+PIVOT_LIBRARY_UPDATED_ICON_expflag = localStorage.getItem("PIVOT_LIBRARY_UPDATED_ICON");
+WATCH_SAVE_UPDATED_ICON_expflag = localStorage.getItem("WATCH_SAVE_UPDATED_ICON");
+WATCH_COLLAPSABLE_COMMENTS_expflag = localStorage.getItem("WATCH_COLLAPSABLE_COMMENTS");
+HEADER_ALWAYS_SHOW_YOUTUBE_TITLE_expflag = localStorage.getItem("HEADER_ALWAYS_SHOW_YOUTUBE_TITLE");
+HEADER_MENU_BUTTON_expflag = localStorage.getItem("HEADER_MENU_BUTTON");
+APP_NO_INTERNET_POPUP_NEW_STYLE_expflag = localStorage.getItem("APP_NO_INTERNET_POPUP_NEW_STYLE");
+WATCH_CONDENSE_COMMENT_BUTTONS_expflag = localStorage.getItem("WATCH_CONDENSE_COMMENT_BUTTONS");
+WATCH_FORMAT_LIKE_COUNTS_expflag = localStorage.getItem("WATCH_FORMAT_LIKE_COUNTS");
+APP_IOS_SYSTEM_FONT_expflag = localStorage.getItem("APP_IOS_SYSTEM_FONT");
+WATCH_CONDENSE_COMMUNITY_POST_BUTTONS_expflag = localStorage.getItem("WATCH_CONDENSE_COMMUNITY_POST_BUTTONS");
+WATCH_COMMENTS_ADD_OPTIONS_expflag = localStorage.getItem("WATCH_COMMENTS_ADD_OPTIONS");
+WATCH_COMMUNITY_POSTS_ADD_OPTIONS_expflag = localStorage.getItem("WATCH_COMMUNITY_POSTS_ADD_OPTIONS");
+
 ERACAST_PROXY_MODE_option = localStorage.getItem("ERACAST_PROXY_MODE");
 if (ERACAST_PROXY_MODE_option == undefined) {
   localStorage.setItem("ERACAST_PROXY_MODE", "http://whale.x10.mx/tv/proxy/proxy2.php?csurl=");
@@ -414,7 +446,7 @@ DarkThemeDesc_text_string = "Enable dark theme throughout the app";
 EraCast_text_string = "EraCast mode";
 EraCastDesc_text_string = "Connect to EraCast servers";
 EraCastProxy_text_string = "EraCast proxy"
-EraCastProxyDesc_text_string = "The proxy must bypass CORS and have a non-standard useragent";
+EraCastProxyDesc_text_string = "If the current one doesn't work, check if mixed blocking is on\n<small>Proxy must use custom user-agent</small>";
 About_text_string = "About";
 ReturnHomepage_text_string = "Return home";
 Reload_text_string = "Refresh";
