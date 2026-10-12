@@ -569,9 +569,8 @@ a few hours later:
 
 05 Jun 2026 (1st update of 2026!):
 -Removed use of the "polyfill.js" plugin
--Removed material ripple from setting textbox options (This was done to avoid it conflicting the textbox while editing its value)
 
-BETA (or something):
+From legoskid's "Big update add alot of expflags" pull request (taken from ytm15-beta-org.github.io/app/#/about):
 
 legoskid, 04 - 05 Dec 2025:
 -Changed Invidious instance to inv.perditum.com
