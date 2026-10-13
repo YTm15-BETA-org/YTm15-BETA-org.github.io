@@ -976,6 +976,7 @@ Entinty1999, 12 Oct 2026:
 -Changed the default/hosted branch from "cors2" to "eracast"
 --This means that eracast has moved from ytm15-beta-org.github.io/eracast to ytm15-beta-org.github.io/app. The previous URL still exists, but is now deprecated.
 -Added an extra archive of cors2 as a homage under ytm15-beta-org.github.io/cors2
+-Changed link on index.html (landing page) back to ytm15-beta-org.github.io/app, since there are no longer any other competing PRs. However, the PR Selector remains on the wiki for anyone who still wants its information (or a convenient link to the cors2 archive)
 
     </div>
     </div>
