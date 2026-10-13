@@ -134,7 +134,7 @@ Changelog
     <div class="ap-footer-content">
     <h3 class="ap-footer-text">Have any questions/issues/requests/bugs/feedback? Assuming it's specific to this BETA, you should probably report them at <a href="https://github.com/ytm15/ytm15.github.io/pull/65">the appropiate pull request.</a></h3>
     <h4 class="ap-footer-text small subhead" id="ap-footer-links">Links: <a href="https://ytm15-beta-org.github.io/">Landing page</a> | <a href="https://github.com/ytm15-beta-org/ytm15-beta-org.github.io/">Github page</a></h4>
-    <h4 class="ap-footer-text small subhead" id="ap-footer-copyright-and-copyleft-text">© 2015-2019, YouTube and Google | (ↄ) 2024-2025, Yacine's remakes | (ↄ) 2025-2026, Entinty1999 (for YTm15 BETA specific code) | (ↄ) 2026, legoskid (for Pull Request #65)</h4> 
+    <h4 class="ap-footer-text small subhead" id="ap-footer-copyright-and-copyleft-text">© 2015-2020, YouTube and Google | (ↄ) 2024-2026, Yacine's remakes | (ↄ) 2025-2026, Entinty1999 (for YTm15 BETA specific code) | (ↄ) 2026, legoskid (for Pull Request #65)</h4> 
     <h4 class="ap-footer-text small subhead">Please note that YTm15, and therefore YTm15 BETA, is not associated with, affiliated with, developed, approved, or endorsed by YouTube or Google!</h4>
     </div>
     </footer>
