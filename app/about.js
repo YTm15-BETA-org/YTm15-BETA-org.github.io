@@ -100,16 +100,14 @@ Stuff YTm15 makes use of
 
 Player:
 -Custom-built player made just for YTm15 (uses the Invidious API) (You can use YT's embed player as a fallback by going to "player 3-square menu" > "YT iframe player", in case the YTm15 player doesn't play)
-(formerly used YouTube's embed player, and Invidious' embed player before that)
+(Original YTm15 formerly used YouTube's embed player, and Invidious' embed player before that)
 <!-- Polyfills:
 -Polyfill.io (<a href="https://polyfill.io/">https://polyfill.io/</a>) (this line of text was removed on 31 Aug 2024 due to polyfill.io being shut down for some reason) -->
 Other JS Plugins:
 -Swipe Listener (<a href="https://github.com/umanghome/swipe-listener">https://github.com/umanghome/swipe-listener</a>)
 
 YTm15 BETA:
--legoskid's Pull Request #60 (<a href="https://github.com/ytm15/ytm15.github.io/pull/60/">https://github.com/ytm15/ytm15.github.io/pull/60/</a>)
-
--(<a href="https://ytm15-beta-org.github.io/eracast">used by YTm15 BETA EraCast Branch (experimental)</a>) legoskid's Pull Request #65 (<a href="https://github.com/ytm15/ytm15.github.io/pull/65/">https://github.com/ytm15/ytm15.github.io/pull/65/</a>)
+-legoskid's Pull Request #65 (<a href="https://github.com/ytm15/ytm15.github.io/pull/65/">https://github.com/ytm15/ytm15.github.io/pull/65/</a>)
 
 </div>
     </div>
@@ -134,9 +132,9 @@ Changelog
     </div>
     <footer class="about-page-footer">
     <div class="ap-footer-content">
-    <h3 class="ap-footer-text">Have any questions/issues/requests/bugs/feedback? Assuming it's specific to this BETA, you should probably report them at <a href="https://github.com/ytm15/ytm15.github.io/pull/60">the appropiate pull request.</a></h3>
+    <h3 class="ap-footer-text">Have any questions/issues/requests/bugs/feedback? Assuming it's specific to this BETA, you should probably report them at <a href="https://github.com/ytm15/ytm15.github.io/pull/65">the appropiate pull request.</a></h3>
     <h4 class="ap-footer-text small subhead" id="ap-footer-links">Links: <a href="https://ytm15-beta-org.github.io/">Landing page</a> | <a href="https://github.com/ytm15-beta-org/ytm15-beta-org.github.io/">Github page</a></h4>
-    <h4 class="ap-footer-text small subhead" id="ap-footer-copyright-and-copyleft-text">© 2015-2020, YouTube and Google | (ↄ) 2024-2026, Yacine's remakes | (ↄ) 2025-2026, legoskid (for Pull Request #60) | (ↄ) 2025-2026, Entinty1999 (for YTm15 BETA + loading fix to Pull Request #60)</h4>
+    <h4 class="ap-footer-text small subhead" id="ap-footer-copyright-and-copyleft-text">© 2015-2019, YouTube and Google | (ↄ) 2024-2025, Yacine's remakes | (ↄ) 2025-2026, Entinty1999 (for YTm15 BETA specific code) | (ↄ) 2026, legoskid (for Pull Request #65)</h4> 
     <h4 class="ap-footer-text small subhead">Please note that YTm15, and therefore YTm15 BETA, is not associated with, affiliated with, developed, approved, or endorsed by YouTube or Google!</h4>
     </div>
     </footer>
@@ -570,7 +568,7 @@ a few hours later:
 05 Jun 2026 (1st update of 2026!):
 -Removed use of the "polyfill.js" plugin
 
-From legoskid's "Big update add alot of expflags" pull request (taken from ytm15-beta-org.github.io/app/#/about):
+From legoskid's "Big update add alot of expflags" pull request (taken from ytm15-beta-org.github.io/cors2/#/about):
 
 legoskid, 04 - 05 Dec 2025:
 -Changed Invidious instance to inv.perditum.com
@@ -623,6 +621,17 @@ Entinty1999, 19 Dec 2025:
 Entinty1999, 20 Dec 2025:
 -Added YTm15 BETA Restored disclaimer to readme, including site link
 
+Entinty1999, 25 Dec 2025:
+-Added the BETA (or something) changelog
+
+legoskid, 9 Jan 2026:
+-Fully fixed player for EraCast Mode
+
+legoskid, 20 Jan 2026:
+-Partially fixed video details in EraCast Mode
+-Published Pull Request #65
+
+Entinty1999, 21 Jan 2026:
 legoskid, 20 Dec 2025:
 -Fixed underlined links even when APP_UNDERLINE_BUTTONS is disabled (YTm15 issue #57)
 
@@ -892,7 +901,81 @@ Yacine-Book, 7 Oct 2026:
 -Made minor code adjustments
 -Merged cors2 into main YTm15
 
-- END OF BETA CHANGELOG -
+- END OF PR CHANGELOG -
+
+BETA (or something):
+
+Entinty1999, 18 Dec 2025: 
+-Forked legoskid/ytm15.github.io to create YTm15 BETA Restored at github.com/Entinty1999/YTm15-BETA 
+-Temporarily hosted GitHub Pages at ytm15-beta.neocities.org  
+
+Entinty1999, 19 Dec 2025:
+-Added temporary ytm15-beta.neocities.org/app URL to index.html 
+-Created the YTm15 BETA Organization 
+-Moved YTm15 BETA Restored to the YTm15 BETA Organization at github.com/YTm15-BETA-org/YTm15-BETA-org.github.io 
+-Changed GitHub Pages site to ytm15-beta-org.github.io to fix Neocities iFrame issues as a more permanent URL
+-Changed index.html link to new URL ytm15-beta-org.github.io/app  
+
+Entinty1999, 20 Dec 2025: 
+-Added YTm15 BETA Restored disclaimer to readme, including site link 
+
+Entinty1999, 25 Dec 2025:
+-Added the BETA (or something) changelog 
+
+legoskid, 8 Jan 2026: 
+-Started development on "eracast" (Pull Request #65 not posted yet)
+-Added "EraCast Mode" to YTm15 Settings
+-Started working on Video Playback from EraCast  
+
+legoskid, 9 Jan 2026:
+-Fully fixed player for EraCast Mode 
+
+legoskid, 20 Jan 2026:
+-Partially fixed video details in EraCast Mode 
+-Published Pull Request #65  
+
+Entinty1999, 21 Jan 2026: 
+-Added experimental "eracast" branch from YTm15 Pull Request #65, currently accessible at ytm15-beta-org.github.io/eracast (PR source selector will be added later if this experiment works, currently it is unmodified and uses vanilla YTm15 branding)
+-Made numerous changes to the about page, including: 
+--Fixed broken "What is YTm15/YouTube Mobile 2015?" header
+--Fixed "copyright" years to include ALL years
+--Added credit for legoskid and I to the "copyright"s 
+--Fixed footer links to actually go to YTm15 BETA pages
+--Added credit for experimental "eracast" branch from YTm15 Pull Request #65   
+
+Entinty1999, 26 Jan 2026:
+-Refined the about page again, including the following changes: 
+--Moved Pull Request credits down to a special YTm15 BETA category (instead of erroneously including them in the API category)
+--Fixed broken link to "eracast" Pull Request (Pull Request #65)
+-Added YTm15 BETA's about.js to ytm15-beta-org.github.io/eracast, including relevant changes 
+-Changed landing page (index.html) link to go to temporary "BETA Selector" page  
+
+Entinty1999, 8 Feb 2026:
+-Added mirror of vanilla YTm15 (hosted at ytm15-beta-org.github.io/vanilla-mirror) 
+--Added YTm15 BETA changelog to the mirror, but renamed it to "Mirror changelog"
+-Added colons after dates in changelog for consistency with Yacine's changelog  
+
+legoskid, 21 Sep 2026: 
+-Added custom useragent requirement notice to the EraCast Mode option 
+-Fixed video playback and added working quality options 
+
+legoskid, 22 Sep 2026:
+-Fixed thumbnail parsing so that the player now works with most videos  
+
+legoskid, 23 Sep 2026:
+-Added EraCast Proxy Mode, meaning the custom useragent is no longer necessary  
+
+legoskid, 24 Sep 2026: 
+-Made the Cast button function properly (according to YTm15 logic) in EraCast Mode
+-Rephrased the description for proxy mode
+
+legoskid, 8 Oct 2026:
+-Updated the PR to the latest YTm15
+
+Entinty1999, 12 Oct 2026:
+-Changed the default/hosted branch from "cors2" to "eracast"
+--This means that eracast has moved from ytm15-beta-org.github.io/eracast to ytm15-beta-org.github.io/app. The previous URL still exists, but is now deprecated.
+-Added an extra archive of cors2 as a homage under ytm15-beta-org.github.io/cors2
 
     </div>
     </div>
