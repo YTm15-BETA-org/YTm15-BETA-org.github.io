@@ -114,6 +114,62 @@
     }
   };
 
+  window.fetchEraCastSearch = async function fetchEraCastSearch(query, page = 1, sort = '') {
+    const searchUrl = new URL('https://www.eracast.cc/results');
+    searchUrl.searchParams.set('search_query', query);
+    searchUrl.searchParams.set('page', String(page));
+    if (sort) searchUrl.searchParams.set('search_sort', sort);
+
+    const response = await fetch(ERACAST_PROXY_MODE_option + encodeURIComponent(searchUrl.href), { method: 'GET', mode: 'cors' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const dom = new DOMParser().parseFromString(await response.text(), 'text/html');
+    const durationSeconds = (value) => {
+      const parts = value.trim().split(':').map(Number);
+      return parts.every(Number.isFinite) ? parts.reduce((seconds, part) => seconds * 60 + part, 0) : 0;
+    };
+    const absoluteImage = (image) => {
+      const source = image?.getAttribute('data-thumb') || image?.getAttribute('src') || '';
+      return source ? new URL(source, searchUrl).href : '';
+    };
+    const results = Array.from(dom.querySelectorAll('.item-section .yt-lockup')).map((lockup) => {
+      const titleLink = lockup.querySelector('.yt-lockup-title a');
+      if (!titleLink) return null;
+      const href = new URL(titleLink.getAttribute('href'), searchUrl);
+      const title = (titleLink.getAttribute('title') || titleLink.textContent || '').trim();
+      const thumbnail = absoluteImage(lockup.querySelector('.yt-lockup-thumbnail img'));
+      const metadata = Array.from(lockup.querySelectorAll('.yt-lockup-meta-info li'), item => item.textContent.trim());
+
+      if (lockup.classList.contains('yt-lockup-channel')) {
+        const channelId = href.pathname.match(/^\/channel\/([^/]+)/)?.[1];
+        if (!channelId) return null;
+        const videoCount = Number(metadata.find(text => /\bvideos?\b/i.test(text))?.replace(/[^\d]/g, '') || 0);
+        const subscribers = lockup.querySelector('[aria-label$="subscribers"]')?.getAttribute('aria-label') || '';
+        return { type: 'channel', channelId, title, thumbnail, videoCount, subscribers };
+      }
+      if (lockup.classList.contains('yt-lockup-playlist')) {
+        const playlistId = href.searchParams.get('list');
+        if (!playlistId) return null;
+        return { type: 'playlist', playlistId, title, thumbnail, videoCount: Number(metadata.find(text => /\bvideos?\b/i.test(text))?.replace(/[^\d]/g, '') || 0), author: lockup.querySelector('.yt-lockup-byline a')?.textContent.trim() || '' };
+      }
+      const videoId = href.searchParams.get('v');
+      if (!videoId) return null;
+      const authorLink = lockup.querySelector('.yt-lockup-byline a[href*="/channel/"]');
+      const authorId = authorLink?.getAttribute('href')?.match(/\/channel\/([^/?#]+)/)?.[1] || '';
+      const publishedText = metadata.find(text => !/views?\b/i.test(text)) || '';
+      const viewCountText = metadata.find(text => /views?\b/i.test(text)) || '';
+      return {
+        type: 'video', videoId, title, thumbnail,
+        lengthSeconds: durationSeconds(lockup.querySelector('.video-time')?.textContent || ''),
+        author: authorLink?.textContent.trim() || '', authorId, publishedText,
+        viewCount: viewCountText ? Number(viewCountText.replace(/[^\d]/g, '')) : null
+      };
+    }).filter(Boolean);
+
+    const nextLink = dom.querySelector('a.yt-uix-pager-next');
+    const nextPage = nextLink ? Number(new URL(nextLink.getAttribute('href'), searchUrl).searchParams.get('page')) : null;
+    return { results, countText: dom.querySelector('.num-results')?.textContent.trim() || '', nextPage: Number.isFinite(nextPage) ? nextPage : null };
+  };
+
   // @param {string} videoId
   // @returns {Promise<{thumbnail:{url:string}[],title:string,formats:{url:string,mimeType:string,qualityLabel:string}[]}|{}>}
   window.fetchEraCastVideoFormats = async function fetchEraCastVideoFormats(videoId) {
