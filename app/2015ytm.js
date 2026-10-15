@@ -1310,7 +1310,7 @@ if (PIVOT_NOTIFICATIONS_ICON_VARIANT_expflag == "Shared (NOT ACCURATE)" && item.
     });
 }
 
-function renderCompactMediaItem(parent, parentName, itemVideoId, itemThumbnail, itemLength, itemTitle, itemAuthor, itemAuthorId, itemPublishedText, itemViewCount, mediaType) {
+function renderCompactMediaItem(parent, parentName, itemVideoId, itemThumbnail, itemLength, itemTitle, itemAuthor, itemAuthorId, itemPublishedText, itemViewCount, mediaType, itemOptions) {
         const video = document.createElement('div');
         compMediaTypeName = 'compact-video';
         if (mediaType == "channel") {
@@ -1493,6 +1493,9 @@ function renderCompactMediaItem(parent, parentName, itemVideoId, itemThumbnail, 
         hashChannelCount.classList.add('compact-media-stats', 'small-text');
 
         if (mediaType == "channel") {
+        if (itemOptions && itemOptions.channelVideoCount != null) {
+        vidCountByline.textContent = Number(itemOptions.channelVideoCount).toLocaleString() + " videos";
+        } else {
         vidCountByline.innerHTML = `<span style="font-style: italic;opacity: .8;">Retrieving video count...</span>`;
         const channelData = new XMLHttpRequest();
         /* channelData.open('GET', 'https://yt.lemnoslife.com/channels?part=snippet,status,about&id=' + itemAuthorId, true); */
@@ -1514,6 +1517,7 @@ function renderCompactMediaItem(parent, parentName, itemVideoId, itemThumbnail, 
           console.error("An error occurred with this operation (" + channelData.status + ")");
           }
         };
+        }
         }
 
         const published = document.createElement('div');
